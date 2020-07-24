@@ -1,0 +1,8 @@
+prefix=/home/sandy/MicronUVGIRobot/rosws/simulation_ws/devel
+
+Name: tohoku_uvc_bot_description
+Description: Description of tohoku_uvc_bot_description
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

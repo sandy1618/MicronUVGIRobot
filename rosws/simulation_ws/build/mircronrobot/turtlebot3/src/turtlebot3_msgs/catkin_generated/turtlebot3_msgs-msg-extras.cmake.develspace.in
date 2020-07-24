@@ -1,0 +1,2 @@
+set(turtlebot3_msgs_MESSAGE_FILES "/home/sandy/MicronUVGIRobot/rosws/simulation_ws/src/mircronrobot/turtlebot3/src/turtlebot3_msgs/msg/SensorState.msg;/home/sandy/MicronUVGIRobot/rosws/simulation_ws/src/mircronrobot/turtlebot3/src/turtlebot3_msgs/msg/VersionInfo.msg;/home/sandy/MicronUVGIRobot/rosws/simulation_ws/src/mircronrobot/turtlebot3/src/turtlebot3_msgs/msg/Sound.msg")
+set(turtlebot3_msgs_SERVICE_FILES "")

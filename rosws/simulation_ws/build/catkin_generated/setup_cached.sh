@@ -24,5 +24,6 @@ export CMAKE_PREFIX_PATH="/home/sandy/MicronUVGIRobot/rosws/simulation_ws/devel:
 export LD_LIBRARY_PATH="/home/sandy/MicronUVGIRobot/rosws/simulation_ws/devel/lib:$LD_LIBRARY_PATH"
 export PKG_CONFIG_PATH="/home/sandy/MicronUVGIRobot/rosws/simulation_ws/devel/lib/pkgconfig:$PKG_CONFIG_PATH"
 export PWD="/home/sandy/MicronUVGIRobot/rosws/simulation_ws/build"
+export PYTHONPATH="/home/sandy/MicronUVGIRobot/rosws/simulation_ws/devel/lib/python2.7/dist-packages:$PYTHONPATH"
 export ROSLISP_PACKAGE_DIRECTORIES="/home/sandy/MicronUVGIRobot/rosws/simulation_ws/devel/share/common-lisp"
 export ROS_PACKAGE_PATH="/home/sandy/MicronUVGIRobot/rosws/simulation_ws/src:$ROS_PACKAGE_PATH"

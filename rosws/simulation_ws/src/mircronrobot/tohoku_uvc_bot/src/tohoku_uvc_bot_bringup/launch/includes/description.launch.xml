@@ -1,0 +1,5 @@
+<launch>
+    <arg name="model" default="turtlebot3"/>
+    <arg name="urdf_file" default="$(find xacro)/xacro --inorder '$(find tohoku_uvc_bot_description)/urdf/tohoku_uvc_$(arg model).urdf.xacro'"/>
+    <param name="robot_description" command="$(arg urdf_file)"/>
+</launch>
