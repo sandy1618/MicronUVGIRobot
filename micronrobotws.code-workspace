@@ -1,8 +1,13 @@
 {
 	"folders": [
 		{
-			"path": "."
+			"path": "rosws/simulation_ws/src"
 		}
 	],
-	"settings": {}
+	"settings": {
+		"python.autoComplete.extraPaths": [
+			"/home/sandy/MicronUVGIRobot/rosws/simulation_ws/devel/lib/python2.7/dist-packages",
+			"/opt/ros/kinetic/lib/python2.7/dist-packages"
+		]
+	}
 }

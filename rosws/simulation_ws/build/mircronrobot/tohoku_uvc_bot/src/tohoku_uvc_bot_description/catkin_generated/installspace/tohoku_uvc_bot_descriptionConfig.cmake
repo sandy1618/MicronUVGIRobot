@@ -66,7 +66,7 @@ endif()
 set(tohoku_uvc_bot_description_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
-if("TRUE" STREQUAL "TRUE")
+if("FALSE" STREQUAL "TRUE")
   set(tohoku_uvc_bot_description_SOURCE_PREFIX /home/sandy/MicronUVGIRobot/rosws/simulation_ws/src/mircronrobot/tohoku_uvc_bot/src/tohoku_uvc_bot_description)
   set(tohoku_uvc_bot_description_DEVEL_PREFIX /home/sandy/MicronUVGIRobot/rosws/simulation_ws/devel)
   set(tohoku_uvc_bot_description_INSTALL_PREFIX "")
@@ -110,7 +110,7 @@ if(NOT " " STREQUAL " ")
         message(FATAL_ERROR "Project 'tohoku_uvc_bot_description' specifies '${idir}' as an include dir, which is not found.  It does not exist in '${include}'.  ${_report}")
       endif()
     else()
-      message(FATAL_ERROR "Project 'tohoku_uvc_bot_description' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/sandy/MicronUVGIRobot/rosws/simulation_ws/src/mircronrobot/tohoku_uvc_bot/src/tohoku_uvc_bot_description/${idir}'.  ${_report}")
+      message(FATAL_ERROR "Project 'tohoku_uvc_bot_description' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '\${prefix}/${idir}'.  ${_report}")
     endif()
     _list_append_unique(tohoku_uvc_bot_description_INCLUDE_DIRS ${include})
   endforeach()
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/sandy/MicronUVGIRobot/rosws/simulation_ws/devel/lib;/opt/ros/kinetic/lib)
+    foreach(path /home/sandy/MicronUVGIRobot/rosws/simulation_ws/install/lib;/opt/ros/kinetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

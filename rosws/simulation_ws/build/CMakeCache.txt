@@ -804,10 +804,16 @@ tf2_ros_DIR:PATH=/opt/ros/kinetic/share/tf2_ros/cmake
 tf_DIR:PATH=/opt/ros/kinetic/share/tf/cmake
 
 //Value Computed by CMake
-tohoku_uvc_bot_description_BINARY_DIR:STATIC=/home/sandy/MicronUVGIRobot/rosws/simulation_ws/build/mircronrobot/tohoku_uvc_bot/tohoku_uvc_bot_description
+tohoku_uvc_bot_bringup_BINARY_DIR:STATIC=/home/sandy/MicronUVGIRobot/rosws/simulation_ws/build/mircronrobot/tohoku_uvc_bot/src/tohoku_uvc_bot_bringup/launch
 
 //Value Computed by CMake
-tohoku_uvc_bot_description_SOURCE_DIR:STATIC=/home/sandy/MicronUVGIRobot/rosws/simulation_ws/src/mircronrobot/tohoku_uvc_bot/tohoku_uvc_bot_description
+tohoku_uvc_bot_bringup_SOURCE_DIR:STATIC=/home/sandy/MicronUVGIRobot/rosws/simulation_ws/src/mircronrobot/tohoku_uvc_bot/src/tohoku_uvc_bot_bringup/launch
+
+//Value Computed by CMake
+tohoku_uvc_bot_description_BINARY_DIR:STATIC=/home/sandy/MicronUVGIRobot/rosws/simulation_ws/build/mircronrobot/tohoku_uvc_bot/src/tohoku_uvc_bot_description
+
+//Value Computed by CMake
+tohoku_uvc_bot_description_SOURCE_DIR:STATIC=/home/sandy/MicronUVGIRobot/rosws/simulation_ws/src/mircronrobot/tohoku_uvc_bot/src/tohoku_uvc_bot_description
 
 //The directory containing a CMake configuration file for trajectory_msgs.
 trajectory_msgs_DIR:PATH=/opt/ros/kinetic/share/trajectory_msgs/cmake
@@ -1103,7 +1109,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=28
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=29
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

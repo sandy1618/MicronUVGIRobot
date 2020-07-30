@@ -2193,6 +2193,24 @@ clean: turtlebot/follow_line_tc_pkg/CMakeFiles/dynamic_reconfigure_generate_mess
 .PHONY : clean
 
 #=============================================================================
+# Directory level rules for directory mircronrobot/tohoku_uvc_bot/src/tohoku_uvc_bot_bringup/launch
+
+# Convenience name for "all" pass in the directory.
+mircronrobot/tohoku_uvc_bot/src/tohoku_uvc_bot_bringup/launch/all:
+
+.PHONY : mircronrobot/tohoku_uvc_bot/src/tohoku_uvc_bot_bringup/launch/all
+
+# Convenience name for "clean" pass in the directory.
+mircronrobot/tohoku_uvc_bot/src/tohoku_uvc_bot_bringup/launch/clean:
+
+.PHONY : mircronrobot/tohoku_uvc_bot/src/tohoku_uvc_bot_bringup/launch/clean
+
+# Convenience name for "preinstall" pass in the directory.
+mircronrobot/tohoku_uvc_bot/src/tohoku_uvc_bot_bringup/launch/preinstall:
+
+.PHONY : mircronrobot/tohoku_uvc_bot/src/tohoku_uvc_bot_bringup/launch/preinstall
+
+#=============================================================================
 # Directory level rules for directory mircronrobot/turtlebot3/src/turtlebot3/turtlebot3_bringup
 
 # Convenience name for "all" pass in the directory.
@@ -5035,22 +5053,22 @@ clean: turtlebot/turtlebot_teleop/CMakeFiles/turtlebot_teleop_joy.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Directory level rules for directory mircronrobot/tohoku_uvc_bot/tohoku_uvc_bot_description
+# Directory level rules for directory mircronrobot/tohoku_uvc_bot/src/tohoku_uvc_bot_description
 
 # Convenience name for "all" pass in the directory.
-mircronrobot/tohoku_uvc_bot/tohoku_uvc_bot_description/all:
+mircronrobot/tohoku_uvc_bot/src/tohoku_uvc_bot_description/all:
 
-.PHONY : mircronrobot/tohoku_uvc_bot/tohoku_uvc_bot_description/all
+.PHONY : mircronrobot/tohoku_uvc_bot/src/tohoku_uvc_bot_description/all
 
 # Convenience name for "clean" pass in the directory.
-mircronrobot/tohoku_uvc_bot/tohoku_uvc_bot_description/clean:
+mircronrobot/tohoku_uvc_bot/src/tohoku_uvc_bot_description/clean:
 
-.PHONY : mircronrobot/tohoku_uvc_bot/tohoku_uvc_bot_description/clean
+.PHONY : mircronrobot/tohoku_uvc_bot/src/tohoku_uvc_bot_description/clean
 
 # Convenience name for "preinstall" pass in the directory.
-mircronrobot/tohoku_uvc_bot/tohoku_uvc_bot_description/preinstall:
+mircronrobot/tohoku_uvc_bot/src/tohoku_uvc_bot_description/preinstall:
 
-.PHONY : mircronrobot/tohoku_uvc_bot/tohoku_uvc_bot_description/preinstall
+.PHONY : mircronrobot/tohoku_uvc_bot/src/tohoku_uvc_bot_description/preinstall
 
 #=============================================================================
 # Directory level rules for directory turtlebot/kobuki_description
