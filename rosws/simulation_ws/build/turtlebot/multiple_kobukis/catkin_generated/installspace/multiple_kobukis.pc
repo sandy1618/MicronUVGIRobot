@@ -1,8 +1,0 @@
-prefix=/home/sandy/MicronUVGIRobot/rosws/simulation_ws/install
-
-Name: multiple_kobukis
-Description: Description of multiple_kobukis
-Version: 0.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 

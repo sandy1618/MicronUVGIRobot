@@ -1,8 +1,0 @@
-prefix=/home/sandy/MicronUVGIRobot/rosws/simulation_ws/devel
-
-Name: tohoku_uvc_bot_bringup
-Description: Description of tohoku_uvc_bot_bringup
-Version: 1.2.3
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: roscpp std_msgs sensor_msgs
