@@ -1,6 +1,8 @@
 
-**/build
-
-**/devel
+#trying to ignore .bag files
 
 *.bag
+
+**/build/
+
+**/devel/
