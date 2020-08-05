@@ -6,7 +6,7 @@
   Robot state publisher.  -->
 
 
-  <arg name="world_file"  default="$(find turtlebot_navigation_gazebo)/worlds/empty_cafe.world"/> 
+  <arg name="world_file"  default="$(find turtlebot_navigation_gazebo)/worlds/empty_cafe_human.world"/> 
   <!-- <arg name="world_file"  default="$(find summit_xl_gazebo)/worlds/test_zone.sdf"/> -->
 
   <arg name="base"      value="$(optenv TURTLEBOT_BASE kobuki)"/> <!-- create, roomba -->
@@ -40,7 +40,14 @@
     <param name="publish_frequency" type="double" value="30.0" />
   </node>
 
-  
+  <!-- gmapping launcher including. -->
+  <include file="$(find turtlebot_navigation)/launch/includes/gmapping/gmapping.launch.xml">
+  </include>
+
+  <!-- rviz launher including -->
+  <include file="$(find turtlebot_rviz_launchers)/launch/view_mapping.launch">
+  </include>
+
 
 
 
