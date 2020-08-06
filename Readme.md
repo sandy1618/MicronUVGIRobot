@@ -1,7 +1,10 @@
 # MicronUVGIRobot
 
-## Dependencies
-- gazebo 8+
-- ros kinetic 
+## Additional Software 
+sudo apt update
+sudo apt-get install byobu 
 
-[Use the following link to install gazebo 8+ with kinetic](https://medium.com/@abhiksingla10/setting-up-ros-kinetic-and-gazebo-8-or-9-70f2231af21a)
+
+## Dependencies
+sudo apt-get install ros-melodic-pid
+sudo apt-get install ros-melodic-joy ros-melodic-joystick-drivers

@@ -16,6 +16,7 @@ git \
 subversion \
 vim \
 nano \
+byobu \
 # terminator \
 xterm \
 wget \
@@ -81,11 +82,17 @@ ros-melodic-geodesy && \
 apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Configure ROS
-# RUN rosdep init && rosdep update 
+RUN rosdep init && rosdep update 
 RUN echo "source /opt/ros/melodic/setup.bash" >> /root/.bashrc
 RUN echo "export ROSLAUNCH_SSH_UNKNOWN=1" >> /root/.bashrc
 RUN echo "source /opt/ros/melodic/setup.zsh" >> /root/.zshrc
 RUN echo "export ROSLAUNCH_SSH_UNKNOWN=1" >> /root/.zshrc
+
+#Installing ros dependencies 
+RUN apt-get install ros-melodic-pid 
+RUN ros-melodic-joy \
+ros-melodic-joystick-drivers
+
 
 # Entry script - This will also run terminator
 COPY assets/entrypoint_setup.sh /
