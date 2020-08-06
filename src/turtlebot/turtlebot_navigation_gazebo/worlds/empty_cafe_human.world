@@ -15,7 +15,7 @@
     </light>
 
 
-    <!--<actor name="confused_human">
+    <actor name="confused_human">
       <skin>
         <filename>walk.dae</filename>
         <scale>1.0</scale>
@@ -32,7 +32,7 @@
         <trajectory id="0" type="walking">
           <waypoint>
             <time>0</time>
-            <pose>0 2 0 0 0 -1.57</pose>
+            <pose>0 0 0 0 0 -1.57</pose>
           </waypoint>
           <waypoint>
             <time>2</time>
@@ -40,7 +40,7 @@
           </waypoint>
           <waypoint>
             <time>2.5</time>
-            <pose>0 -2 0 0 0 1.57</pose>
+            <pose>0 -3 0 0 0 -1.57</pose>
           </waypoint>
           <waypoint>
             <time>7</time>
@@ -48,13 +48,13 @@
           </waypoint>
           <waypoint>
             <time>7.5</time>
-            <pose>0 2 0 0 0 -1.57</pose>
+            <pose>0 10 0 0 0 -1.57</pose>
           </waypoint>
         </trajectory>
       </script>
-    </actor>-->
+    </actor>
 
-    <actor name="actor">
+    <!--<actor name="actor">
       <skin>
         <filename>walk.dae</filename>
       </skin>
@@ -86,7 +86,7 @@
           </waypoint>
         </trajectory>
       </script>
-    </actor>  
+    </actor>  -->
 
 
     <model name='ground_plane'>

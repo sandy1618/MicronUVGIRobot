@@ -1,6 +1,7 @@
-docker run --rm -it --privileged --net=host --ipc=host \
+docker run --rm -it --privileged --ipc=host \
 --device=/dev/dri:/dev/dri \
 --network host \
+-v ~/.ssh:/home/.ssh \
 -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=$DISPLAY \
 -v $HOME/.Xauthority:/home/$(id -un)/.Xauthority -e XAUTHORITY=/home/$(id -un)/.Xauthority \
 -e DOCKER_USER_NAME=$(id -un) \
@@ -11,3 +12,6 @@ docker run --rm -it --privileged --net=host --ipc=host \
 -v $HOME/MicronUVGIRobot:$HOME/MicronUVGIRobot \
 --name ros_melodic1 \
 turlucode/ros-melodic:cpu
+
+
+
