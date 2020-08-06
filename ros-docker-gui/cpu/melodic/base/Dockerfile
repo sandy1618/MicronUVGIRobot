@@ -54,16 +54,16 @@ ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US:en  
 ENV LC_ALL en_US.UTF-8
 
-# Install OhMyZSH
-RUN apt-get update && apt-get install -y zsh && apt-get clean && rm -rf /var/lib/apt/lists/*
-RUN wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh || true
-#RUN wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh
-RUN chsh -s /usr/bin/zsh root
-RUN git clone https://github.com/sindresorhus/pure /root/.oh-my-zsh/custom/pure
-RUN ln -s /root/.oh-my-zsh/custom/pure/pure.zsh-theme /root/.oh-my-zsh/custom/
-RUN ln -s /root/.oh-my-zsh/custom/pure/async.zsh /root/.oh-my-zsh/custom/
-RUN sed -i -e 's/robbyrussell/refined/g' /root/.zshrc
-RUN sed -i '/plugins=(/c\plugins=(git git-flow adb pyenv tmux)' /root/.zshrc
+# # Install OhMyZSH
+# RUN apt-get update && apt-get install -y zsh && apt-get clean && rm -rf /var/lib/apt/lists/*
+# RUN wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh || true
+# #RUN wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh
+# RUN chsh -s /usr/bin/zsh root
+# RUN git clone https://github.com/sindresorhus/pure /root/.oh-my-zsh/custom/pure
+# RUN ln -s /root/.oh-my-zsh/custom/pure/pure.zsh-theme /root/.oh-my-zsh/custom/
+# RUN ln -s /root/.oh-my-zsh/custom/pure/async.zsh /root/.oh-my-zsh/custom/
+# RUN sed -i -e 's/robbyrussell/refined/g' /root/.zshrc
+# RUN sed -i '/plugins=(/c\plugins=(git git-flow adb pyenv tmux)' /root/.zshrc
 
 # # Terminator Config
 # RUN mkdir -p /root/.config/terminator/
@@ -77,21 +77,31 @@ RUN apt-get update && apt-get install -y --allow-downgrades --allow-remove-essen
 libpcap-dev \
 gstreamer1.0-tools libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev libgstreamer-plugins-good1.0-dev \
 ros-melodic-desktop-full python-rosinstall python-rosinstall-generator python-wstool build-essential \
+python-rosdep \
 ros-melodic-socketcan-bridge \
 ros-melodic-geodesy && \
 apt-get clean && rm -rf /var/lib/apt/lists/*
 
+
+#Installing ros dependencie
+RUN apt-get update && apt-get install -y \
+    ros-melodic-pid \
+    ros-melodic-joy ros-melodic-joystick-drivers && \
+    apt-get clean && rm -rf /var/lib/apt/lists/*
+
 # Configure ROS
-RUN rosdep init && rosdep update 
+RUN rosdep init 
+RUN sudo rosdep fix-permissions
+RUN rosdep update 
 RUN echo "source /opt/ros/melodic/setup.bash" >> /root/.bashrc
 RUN echo "export ROSLAUNCH_SSH_UNKNOWN=1" >> /root/.bashrc
-RUN echo "source /opt/ros/melodic/setup.zsh" >> /root/.zshrc
-RUN echo "export ROSLAUNCH_SSH_UNKNOWN=1" >> /root/.zshrc
+# RUN echo "source /opt/ros/melodic/setup.zsh" >> /root/.zshrc
+# RUN echo "export ROSLAUNCH_SSH_UNKNOWN=1" >> /root/.zshrc
 
 #Installing ros dependencies 
-RUN apt-get install ros-melodic-pid 
-RUN ros-melodic-joy \
-ros-melodic-joystick-drivers
+# RUN apt-get update
+# RUN apt-get install ros-melodic-pid 
+# RUN apt-get install ros-melodic-joy ros-melodic-joystick-drivers
 
 
 # Entry script - This will also run terminator
