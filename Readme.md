@@ -54,5 +54,6 @@ Additional Software
 Dependencies 
 - sudo apt-get install ros-melodic-pid
 - sudo apt-get install ros-melodic-joy ros-melodic-joystick-drivers
+- sudo apt-get install ros-melodic-gmapping
 
 ```
