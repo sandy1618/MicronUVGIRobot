@@ -55,5 +55,37 @@ Dependencies
 - sudo apt-get install ros-melodic-pid
 - sudo apt-get install ros-melodic-joy ros-melodic-joystick-drivers
 - sudo apt-get install ros-melodic-gmapping
+- sudo apt-get install ros-melodic-navigation
+
+Installing real-sense2
+sudo apt-update
+sudo apt-get install ros-melodic-ddynamic-reconfigure
+
+might be needed
+sudo apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
+sudo apt-key del 421C365BD9FF1F717815A3895523BAEEB01FA116
+
+Installing realsense
+(realsense2)[https://github.com/IntelRealSense/librealsense/blob/master/doc/distribution_linux.md]
+
+Steps for installing all realsense dependenceis 
+
+sudo apt-key adv --keyserver keys.gnupg.net --recv-key F6E65AC044F831AC80A06380C8B3A55A6F3EFCDE || sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-key F6E65AC044F831AC80A06380C8B3A55A6F3EFCDE
+
+sudo add-apt-repository "deb http://realsense-hw-public.s3.amazonaws.com/Debian/apt-repo bionic main" -u
+
+sudo apt update
+sudo apt-get install librealsense2-dkms
+sudo apt-get install librealsense2-utils
+sudo apt-get install librealsense2-dev
+sudo apt-get install librealsense2-dbg
+sudo apt install -y librealsense-object-recognition-dev librealsense-persontracking-dev librealsense-slam-dev libopencv-dev
+
+
 
 ```
+
+### Commands 
+roslaunch turtlebot3_slam turtlebot3_gmapping_v1.launch 
+
+

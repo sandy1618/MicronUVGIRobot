@@ -87,7 +87,10 @@ apt-get clean && rm -rf /var/lib/apt/lists/*
 RUN apt-get update && apt-get install -y \
     ros-melodic-pid \
     ros-melodic-gmapping \
+    ros-melodic-navigation \
     ros-melodic-joy ros-melodic-joystick-drivers 
+
+    
 
 # Configure ROS
 RUN rosdep init 

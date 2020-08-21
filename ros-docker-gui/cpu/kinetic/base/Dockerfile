@@ -1,9 +1,5 @@
 FROM ubuntu:16.04
 
-MAINTAINER Athanasios Tasoglou <athanasios@tasoglou.net>
-LABEL Description="ROS-Kinetic-Desktop (Ubuntu 16.04)" Vendor="TurluCode" Version="1.2"
-LABEL com.turlucode.ros.version="kinetic"
-
 # Install packages without prompting the user to answer any questions
 ENV DEBIAN_FRONTEND noninteractive 
 
@@ -52,21 +48,21 @@ ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US:en  
 ENV LC_ALL en_US.UTF-8
 
-# Install OhMyZSH
-RUN apt-get update && apt-get install -y zsh && apt-get clean && rm -rf /var/lib/apt/lists/*
-RUN wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh || true
-#RUN wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh
-RUN chsh -s /usr/bin/zsh root
-RUN git clone https://github.com/sindresorhus/pure /root/.oh-my-zsh/custom/pure
-RUN ln -s /root/.oh-my-zsh/custom/pure/pure.zsh-theme /root/.oh-my-zsh/custom/
-RUN ln -s /root/.oh-my-zsh/custom/pure/async.zsh /root/.oh-my-zsh/custom/
-RUN sed -i -e 's/robbyrussell/refined/g' /root/.zshrc
-RUN sed -i '/plugins=(/c\plugins=(git git-flow adb pyenv tmux)' /root/.zshrc
+# # Install OhMyZSH
+# RUN apt-get update && apt-get install -y zsh && apt-get clean && rm -rf /var/lib/apt/lists/*
+# RUN wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh || true
+# #RUN wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh
+# RUN chsh -s /usr/bin/zsh root
+# RUN git clone https://github.com/sindresorhus/pure /root/.oh-my-zsh/custom/pure
+# RUN ln -s /root/.oh-my-zsh/custom/pure/pure.zsh-theme /root/.oh-my-zsh/custom/
+# RUN ln -s /root/.oh-my-zsh/custom/pure/async.zsh /root/.oh-my-zsh/custom/
+# RUN sed -i -e 's/robbyrussell/refined/g' /root/.zshrc
+# RUN sed -i '/plugins=(/c\plugins=(git git-flow adb pyenv tmux)' /root/.zshrc
 
-# Terminator Config
-RUN mkdir -p /root/.config/terminator/
-COPY assets/terminator_config /root/.config/terminator/config 
-COPY assets/terminator_background.png /root/.config/terminator/background.png
+# # Terminator Config
+# RUN mkdir -p /root/.config/terminator/
+# COPY assets/terminator_config /root/.config/terminator/config 
+# COPY assets/terminator_background.png /root/.config/terminator/background.png
 
 # Install ROS
 RUN sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
@@ -74,7 +70,7 @@ RUN apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E
 RUN apt-get update && apt-get install -y --allow-downgrades --allow-remove-essential --allow-change-held-packages \
 libpcap-dev \
 gstreamer1.0-tools libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev libgstreamer-plugins-good1.0-dev \
-ros-kinetic-desktop-full python-rosinstall python-rosinstall-generator python-wstool build-essential \
+ros-kinetic-ros-base python-rosinstall python-rosinstall-generator python-wstool build-essential \
 ros-kinetic-socketcan-bridge \
 ros-kinetic-geodesy && \
 apt-get clean && rm -rf /var/lib/apt/lists/*
@@ -83,12 +79,12 @@ apt-get clean && rm -rf /var/lib/apt/lists/*
 RUN rosdep init && rosdep update 
 RUN echo "source /opt/ros/kinetic/setup.bash" >> /root/.bashrc
 RUN echo "export ROSLAUNCH_SSH_UNKNOWN=1" >> /root/.bashrc
-RUN echo "source /opt/ros/kinetic/setup.zsh" >> /root/.zshrc
-RUN echo "export ROSLAUNCH_SSH_UNKNOWN=1" >> /root/.zshrc
+# RUN echo "source /opt/ros/kinetic/setup.zsh" >> /root/.zshrc
+# RUN echo "export ROSLAUNCH_SSH_UNKNOWN=1" >> /root/.zshrc
 
 # Entry script - This will also run terminator
 COPY assets/entrypoint_setup.sh /
 ENTRYPOINT ["/entrypoint_setup.sh"]
 
 # Launch terminator
-CMD ["terminator"]
+CMD ["bash"]
