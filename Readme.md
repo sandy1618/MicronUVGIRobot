@@ -58,7 +58,7 @@ Dependencies
 - sudo apt-get install ros-melodic-navigation
 
 Installing real-sense2
-sudo apt-update
+sudo apt-get update
 sudo apt-get install ros-melodic-ddynamic-reconfigure
 
 might be needed
@@ -74,10 +74,9 @@ sudo apt-key adv --keyserver keys.gnupg.net --recv-key F6E65AC044F831AC80A06380C
 
 sudo add-apt-repository "deb http://realsense-hw-public.s3.amazonaws.com/Debian/apt-repo bionic main" -u
 
-sudo apt update
-sudo apt-get install librealsense2-dkms
-sudo apt-get install librealsense2-utils
-sudo apt-get install librealsense2-dev
+sudo apt-get update
+sudo apt-get install librealsense2-dkms librealsense2-utils librealsense2-dev
+ 
 sudo apt-get install librealsense2-dbg
 sudo apt install -y librealsense-object-recognition-dev librealsense-persontracking-dev librealsense-slam-dev libopencv-dev
 
