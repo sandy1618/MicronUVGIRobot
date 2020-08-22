@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/uncomment/MicronUVGIRobot/src/cmake-3.15.6/Source/Checks/Curses/CheckCurses.c
+ncurses.h
+-
+ncurses/ncurses.h
+-
+ncurses/curses.h
+-
+curses.h
+-
+
