@@ -1,3 +1,0 @@
-/home/uncomment/MicronUVGIRobot/src/cmake-3.15.6/Source/Checks/Curses-build/CMakeFiles/rebuild_cache.dir
-/home/uncomment/MicronUVGIRobot/src/cmake-3.15.6/Source/Checks/Curses-build/CMakeFiles/CheckCurses.dir
-/home/uncomment/MicronUVGIRobot/src/cmake-3.15.6/Source/Checks/Curses-build/CMakeFiles/edit_cache.dir

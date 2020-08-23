@@ -132,4 +132,13 @@
     </sensor>
   </gazebo>
 
+  <!-- USING MACROS FOR FRONT,RIGHT,LEFT,BACK ULTRASONIC SENSORS -->
+
+ <xacro:include filename="$(find turtlebot3_description)/urdf/ultrasonic_sensor.gazebo.macro.xacro"/>
+ <ultrasonic_gazebo_macro position="front"/>
+ <ultrasonic_gazebo_macro position="right"/>
+ <ultrasonic_gazebo_macro position="left"/>
+ <ultrasonic_gazebo_macro position="back"/>
+
+
 </robot>

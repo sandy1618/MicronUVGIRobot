@@ -162,4 +162,11 @@
     </inertial>
   </link>
 
+ <xacro:include filename="$(find turtlebot3_description)/urdf/ultrasonic_sensor.position.macro.xacro"/>
+ <ultrasonic_position_macro position="front" xyz="0.032 0 0.05" rpy="0 0 0" />
+ <ultrasonic_position_macro position="right" xyz="-0.04 -0.08 0.05" rpy="0 0 -1.57" />
+ <ultrasonic_position_macro position="left" xyz="-0.04 0.08 0.05" rpy="0 0 1.57" />
+ <ultrasonic_position_macro position="back" xyz="-0.1 0 0.05" rpy="0 0 -3.14" />
+
+
 </robot>
