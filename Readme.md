@@ -43,6 +43,7 @@ turlucode/ros-melodic:cpu
 
 
 ### Ignore below
+
 ```
 For documentation purpose only , the below depedencies are used inside the docker
  
@@ -61,11 +62,10 @@ Installing real-sense2
 sudo apt-get update
 sudo apt-get install ros-melodic-ddynamic-reconfigure
 
-might be needed
-sudo apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
-sudo apt-key del 421C365BD9FF1F717815A3895523BAEEB01FA116
 
-Installing realsense
+
+REALSENSE 
+
 (realsense2)[https://github.com/IntelRealSense/librealsense/blob/master/doc/distribution_linux.md]
 
 Steps for installing all realsense dependenceis 
@@ -78,6 +78,25 @@ sudo apt-get install librealsense2-dkms librealsense2-utils librealsense2-dev
 sudo apt-get install librealsense2-dbg
 sudo apt install -y librealsense-object-recognition-dev librealsense-persontracking-dev librealsense-slam-dev libopencv-dev
 
+
+
+HUMAN DETECTION DEPENDECIES 
+
+(Download the file tiago_public.rosinstall) [http://wiki.ros.org/Robots/TIAGo/Tutorials/Installation/TiagoSimulation]
+rosinstall src /opt/ros/melodic tiago_public.rosinstall
+
+sudo rosdep init
+rosdep update
+
+rosdep install --from-paths src --ignore-src --rosdistro melodic --skip-keys="opencv2 opencv2-nonfree pal_laser_filters speed_limit_node sensor_to_cloud hokuyo_node libdw-dev python-graphitesend-pip python-statsd pal_filters pal_vo_server pal_usb_utils pal_pcl pal_pcl_points_throttle_and_filter pal_karto pal_local_joint_control camera_calibration_files pal_startup_msgs pal-orbbec-openni2 dummy_actuators_manager pal_local_planner gravity_compensation_controller current_limit_controller dynamic_footprint dynamixel_cpp tf_lookup opencv3"
+
+source /opt/ros/melodic/setup.bash
+catkin build -DCATKIN_ENABLE_TESTING=0
+
+or do catkin_make in the source root folder.
+
+
+#OPENPOSE 
 (OpenPose)[https://github.com/CMU-Perceptual-Computing-Lab/openpose/blob/master/doc/prerequisites.md]
 
 Installing protobuf is also a must .
@@ -115,8 +134,15 @@ sudo add-apt-repository ppa:makehuman-official/makehuman-community
 sudo apt-get update
 sudo apt-get install makehuman-community
 
+
+
+
 ### Commands 
 roslaunch turtlebot3_slam turtlebot3_gmapping_v1.launch 
+
+roslaunch pal_person_detector_opencv detector.launch image:=/front_realsense/color/image_raw
+rosrun image_view image_view image:=/person_detector/debug
+rostopic echo /person_detector/detections
 
 rosrun gazebo_ros spawn_model -file $(find turtlebot3_gazebo)/obstacles/box_obstacle.urdf -urdf -z 1 -model my_object
 

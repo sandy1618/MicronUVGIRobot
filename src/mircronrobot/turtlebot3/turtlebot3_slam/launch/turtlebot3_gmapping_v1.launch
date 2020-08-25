@@ -1,6 +1,6 @@
 <launch>
   <!-- Arguments -->
-  <arg name="model" default="$(optenv TURTLEBOT3_MODEL burger2)" doc="model type [burger, waffle, waffle_pi]"/>
+  <arg name="model" default="$(optenv TURTLEBOT3_MODEL burger3)" doc="model type [burger, waffle, waffle_pi]"/>
   
   <arg name="configuration_basename" default="turtlebot3_lds_2d.lua"/>
   <arg name="set_base_frame" default="base_footprint"/>
@@ -29,12 +29,13 @@
     <arg name="debug" value="false"/>
   </include>  
 
+  <!-- USING SIMULATION TIME , ARGUMENT GOES INTO PARAMETER SERVER -->
   <param name="/use_sim_time" value="true" />
 
   <!-- Gazebo spawning -->
   <param name="robot_description" command="$(find xacro)/xacro.py --inorder $(find turtlebot3_description)/urdf/turtlebot3_$(arg model).urdf.xacro" />
 
-  <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-urdf -model turtlebot3_burger2 -x $(arg x_pos) -y $(arg y_pos) -z $(arg z_pos) -param robot_description" />
+  <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-urdf -model turtlebot3_$(arg model) -x $(arg x_pos) -y $(arg y_pos) -z $(arg z_pos) -param robot_description" />
 
    <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher">
     <param name="publish_frequency" type="double" value="30.0" />
@@ -42,5 +43,12 @@
   
   <!-- Launching RViz files-->
   <node name="rviz" pkg="rviz" type="rviz" args="-d $(find turtlebot3_slam)/rviz/turtlebot3_gmapping.rviz" />
+
+  <!-- Arguments -->
+  <arg name="HOME" default="$(optenv HOME)"/>
+
+  <!-- Recording rosbag data  -->
+  <node pkg="rosbag" type="record" name="rosbag_record_diag"
+       args="record -o $(arg HOME)/MicronUVGIRobot/Recorded/ /map"/> 
 
 </launch>
