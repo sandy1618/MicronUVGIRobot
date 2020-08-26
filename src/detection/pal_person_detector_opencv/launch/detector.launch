@@ -10,4 +10,6 @@
     <param name="scale" value="$(arg scale)"/>
   </node>
 
+  
+
 </launch>

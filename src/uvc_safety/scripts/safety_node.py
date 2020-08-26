@@ -6,12 +6,13 @@ from sensor_msgs.msg import Range
 from pal_detection_msgs.msg import Detections2d
 
 #NVIDIA Jetson UVC controller 
-import RPi.GPIO as GPIO
+# import RPi.GPIO as GPIO
 import time
 
 
 # Pin Definitions
-output_pin = 18  # BOARD pin 12, BCM pin 18
+uvc_pin = 18  # BOARD pin 12, BCM pin 18
+buzzer_pin = 19  # BOARD pin 12, BCM pin 18
 
 
 class Safety_check:
@@ -45,6 +46,7 @@ class Safety_check:
         elif self.ultrasonic_range > 1.5 and self.ultrasonic_range <= 2:
 
             rospy.loginfo("WARKING::ALARM !!!, Go away Human, Else I will kill you!!!")
+            # GPIO.setup(buzzer_pin, GPIO.OUT,GPIO.LOW)
 
         elif self.ultrasonic_range <= 1.5:
             self.human_flag=1
@@ -52,11 +54,11 @@ class Safety_check:
             
             rospy.loginfo("Stopping UVC lamps because I am not programmed to kill humans but I would have If I could")
         
-        self.safety_flag= self.human_flag * self.range_flag
-        if self.safety_flag:
+        # self.safety_flag= self.human_flag * self.range_flag
+        # if self.safety_flag:
             #Turining off the uvc lamps. 
             #setting gpio value to low for safety check 
-            GPIO.setup(output_pin, GPIO.OUT,GPIO.LOW)
+            # GPIO.setup(uvc_pin, GPIO.OUT,GPIO.LOW)
 
 
 
@@ -70,13 +72,13 @@ if __name__ == '__main__':
         rospy.Subscriber("/sensor/front_ultrasonic",Range,safety_check_front.ultrasonic_callback)
         rospy.spin()
 
-        # Setting up UVC pin to high 
-        # Pin Setup:
-        # Board pin-numbering scheme
-        GPIO.setmode(GPIO.BCM)
-        # set pin as an output pin with optional initial state of HIGH
-        GPIO.setup(output_pin, GPIO.OUT, initial=GPIO.HIGH)
-
+        # # Setting up UVC pin to high 
+        # # Pin Setup:
+        # # Board pin-numbering scheme
+        # GPIO.setmode(GPIO.BCM)
+        # # set pin as an output pin with optional initial state of HIGH
+        # GPIO.setup(uvc_pin, GPIO.OUT, initial=GPIO.HIGH)
+        # GPIO.setup(buzzer_pin, GPIO.OUT, initial=GPIO.HIGH)
 
     except rospy.ROSInterruptException:
         pass

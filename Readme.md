@@ -138,11 +138,22 @@ sudo apt-get install makehuman-community
 
 
 ### Commands 
+
+export TURTLEBOT3_MODEL=burger3
+
+
+
+
 roslaunch turtlebot3_slam turtlebot3_gmapping_v1.launch 
+// Controlling turtlebot
+roslaunch turtlebot3_teleop turtlebot3_teleop_key.launch
 
 roslaunch pal_person_detector_opencv detector.launch image:=/front_realsense/color/image_raw
 rosrun image_view image_view image:=/person_detector/debug
 rostopic echo /person_detector/detections
+
+roslaunch pal_face_detector_opencv detector.launch image:=/front_realsense/color/image_raw
+rosrun image_view image_view image:=/pal_face/debug
 
 rosrun gazebo_ros spawn_model -file $(find turtlebot3_gazebo)/obstacles/box_obstacle.urdf -urdf -z 1 -model my_object
 
