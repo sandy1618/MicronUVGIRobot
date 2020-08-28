@@ -1,5 +1,8 @@
 ## Docker Dependcies documentation which is concantinated into to Dockerfile
 
+Changes made in the following Dockerfile to create the docker image
+/MicronUVGIRobot/Support/ros-docker-gui/cpu/melodic/base/Dockerfile
+
 ```
 For documentation purpose only , the below depedencies are used inside the docker
  
