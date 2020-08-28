@@ -1,4 +1,7 @@
 # MicronUVGIRobot
+## Clone the github repository in home folder
+cd ~/
+git clone https://github.com/sandy1618/MicronUVGIRobot.git
 
 ## Install docker
 ### If you dont have docker, then install git & docker 
@@ -43,8 +46,8 @@ docker run --rm -it --privileged --ipc=host \
 -e DOCKER_USER_GROUP_ID=$(id -g) \
 -e ROS_IP=127.0.0.1 \
 -v $HOME/MicronUVGIRobot:$HOME/MicronUVGIRobot \
---name ros_melodic1 \
-turlucode/ros-melodic:cpu
+--name UVtar_client1 \
+uvtar/trishul:UVtar_client
 
 ```
 
