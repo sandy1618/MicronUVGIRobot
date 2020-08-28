@@ -20,8 +20,8 @@ Serial.println("Motion detected!");
 pirState = HIGH;
 }
 } else {
-digitalWrite(relayPin, LOW); // turn Relay OFF
-delay(150);
+digitalWrite(relayPin, LOW); // turn Relay OFF - UV tubes and LED indicators turn off
+delay(150); //stay off for atleast 15 seconds
 if (pirState == HIGH) {
 Serial.println("Motion ended!");
 pirState = LOW;
