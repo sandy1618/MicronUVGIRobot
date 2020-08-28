@@ -1,0 +1,8 @@
+<launch>
+  <!-- send table urdf to param server -->
+  <param name="obstacle_description" command="$(find xacro)/xacro.py $(find turtlebot3_gazebo)/obstacles/box_obstacle.urdf.xacro" />
+
+  <!-- push table_description to factory and spawn robot in gazebo -->
+  <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-urdf -param obstacle_description -z 0 -model box_model" respawn="false" output="screen" />
+
+</launch>

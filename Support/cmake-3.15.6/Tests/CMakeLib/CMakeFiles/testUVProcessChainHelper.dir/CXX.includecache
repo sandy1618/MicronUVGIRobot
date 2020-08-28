@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/uncomment/MicronUVGIRobot/Support/cmake-3.15.6/Tests/CMakeLib/testUVProcessChainHelper.cxx
+chrono
+-
+iostream
+-
+set
+-
+sstream
+-
+string
+-
+thread
+-
+cctype
+-
+cstdlib
+-
+
