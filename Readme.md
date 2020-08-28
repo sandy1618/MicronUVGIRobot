@@ -13,11 +13,13 @@ sudo sh get-docker.sh
 
 sudo usermod -aG docker $USER
 
+## Two Methods: Method 1
 ### Downloading image file from Docker Hub
 
 docker pull uvtar/trishul:UVtar_client
 
-## Building Image from source repository 
+## Two Methods: Method 1
+### Building Image from source repository 
 
 ### Follow these steps after cloning this repository to your home/ 
 #### TODO: for other ros versions and Nvidia implementations , as of now , only melodic version is used. 
@@ -50,6 +52,8 @@ docker run --rm -it --privileged --ipc=host \
 uvtar/trishul:UVtar_client
 
 ```
+### Stopping Docker 
+docker stop UVtar_client1
 
 ### Commands to run the simulation , UVTar Simulated alter-ego is burger3
 
@@ -76,3 +80,4 @@ rosrun gazebo_ros spawn_model -file $(find turtlebot3_gazebo)/obstacles/box_obst
 
 
 ```
+
