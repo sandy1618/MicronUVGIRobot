@@ -1,0 +1,3 @@
+<launch>
+    <node name="obstacle_avoidance_node" pkg="turtle_bot_obstacle_avoidance" type="simulate_obstacle_avoidance.py" />
+</launch>

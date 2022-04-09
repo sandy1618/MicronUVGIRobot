@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>turtle_bot_obstacle_avoidance</name>
+  <version>0.0.0</version>
+  <description>Simulated Obstacle avoidance for turtlebot3 in gazebo</description>
+
+  <maintainer email="sandeepnayak1.618@gmail.com">Sandeep Kumar Nayak</maintainer>
+
+  <license>TODO</license>
+  <url type="website">https://github.com/sandy1618/MicronUVGIRobot</url>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>rospy</build_depend>
+  <build_export_depend>rospy</build_export_depend>
+  <exec_depend>rospy</exec_depend>
+
+  <export>
+
+  </export>
+</package>
